@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Home</title>
+  </head>
+  <body>
+    <h1>Bienvenido:{{ " " }}{{ param.user.nombre }}</h1>
+    <a href="index.php?action=logout">Cerrar Sesion</a><br>
+    <h4>{{ param.error }}</h4>
+
+    <table>
+      <tr>
+        <th id="nombre">Nombre</th>
+        <th id="precio">Precio</th>
+        <th id="editar"></th>
+      </tr>
+      {% for p in param.productos %}
+        <tr>
+          <td for="nombre">{{ p.nombre }}</td>
+          <td for="precio">${{ p.precio }}</td>
+          <td for="ver">
+            <a href="index.php?action=prod_view&producto={{ p.id }}">Ver</a>
+          </td>
+          <td for="editar">
+            <a href="index.php?action=prod_edit&producto={{ p.id }}">Editar</a>
+          </td>
+          <td for="eliminar">
+            <a href="index.php?action=prod_delete&producto={{ p.id }}">Eliminar</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+    <a href="index.php?action=prod_create">Crear</a>
+  </body>
+</html>

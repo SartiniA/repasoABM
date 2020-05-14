@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+  </head>
+  <body>
+    <h1>Ingrese sus credenciales para entrar al sistema</h1>
+    <h4>{{ param.error }}</h4>
+    <form class="login-form" action="index.php?action=login" method="post">
+      <label for="user">Nombre de usuario</label><br>
+      <input id="user" type="text" name="user" placeholder="Usuario" required><br>
+      <label for="password">Contraseña</label><br>
+      <input id="password" type="password" name="password" placeholder="Contraseña" required><br>
+      <input type="submit" name="submit" value="Ingresar">
+    </form>
+  </body>
+</html>

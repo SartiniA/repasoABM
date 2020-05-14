@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Producto:{{ " " }}{{ param.producto.id }}</title>
+  </head>
+  <body>
+    <h4>{{ param.error }}</h4>
+
+    <h3>Id:{{ " " }}{{ param.producto.id }}</h3>
+    <h3>Nombre:{{ " " }}{{ param.producto.nombre }}</h3>
+    <h3>Precio: ${{ param.producto.precio }}</h3>
+    <h3>Categoria:{{ " " }}{{ param.producto.categoria }}</h3>
+    <h3>Stock:{{ " " }}{{ param.producto.stock_minimo }} productos</h3>
+    <br/>
+    <a href="index.php?action=prod_edit&producto={{ param.producto.id }}">Editar</a>
+    <a href="index.php?action=prod_delete&producto={{ param.producto.id }}">Eliminar</a>
+
+    <a href="index.php?action=home">Regresar al Home</a>
+  </body>
+</html>

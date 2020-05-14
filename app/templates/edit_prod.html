@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Editar producto{{ " " }}{{ param.producto.id }}</title>
+  </head>
+  <body>
+    <h1>Editar producto{{ " " }}{{ param.producto.id }}</h1>
+    <h4>{{ param.error }}</h4>
+    <form class="edit-form" action="index.php?action=prod_edit&producto={{ param.producto.id }}" method="post">
+      <label for="nombre">Nombre del producto</label>
+      <input id="nombre" type="text" name="nombre" value="{{ param.producto.nombre }}" required><br>
+
+      <label for="precio">Precio del producto</label>
+      <input id="precio" type="number" step='0.01' name="precio" value="{{ param.producto.precio }}" required><br>
+
+      <label for="categoria">Categoria del producto</label>
+      <select id='categoria' class="cat-prod" name="categoria">
+        <option value="{{ param.producto.categoria }}">{{ param.producto.categoria }}</option>
+        {% for c in param.categorias %}
+          <option value="{{ c.nombre }}">{{ c.nombre }}</option>
+        {% endfor %}
+      </select><br>
+
+      <label for="stock_minimo">Stock minimo del producto</label>
+      <input id="stock_minimo" type="number" step='0.01' name="stock_minimo" value="{{ param.producto.stock_minimo }}" required><br>
+
+      <input type="submit" name="submit" value="Editar">
+    </form><br>
+    <a href="index.php?action=home">Regresar al Home</a>
+
+  </body>
+</html>
